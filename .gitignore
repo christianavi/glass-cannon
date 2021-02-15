@@ -1,3 +1,8 @@
+# Project specific files
+rpc.json
+log.js
+glass-cannon.exe
+
 # Logs
 logs
 *.log

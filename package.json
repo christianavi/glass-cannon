@@ -1,0 +1,35 @@
+{
+  "name": "glass-cannon",
+  "version": "1.0.0",
+  "description": "Discord rich presence",
+  "main": "index.js",
+  "bin": "index.js",
+  "pkg": {
+    "assets": [
+      "./node_modules/chalk",
+      "./node_modules/discord-rpc",
+      "./node_modules/eslint",
+      "./node_modules/prompt-sync"
+    ]
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "discord-rpc": "^3.2.0",
+    "eslint": "^7.20.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christianavi/glass-cannon.git"
+  },
+  "author": "Christian Avi Bulan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christianavi/glass-cannon/issues"
+  },
+  "homepage": "https://github.com/christianavi/glass-cannon#readme"
+}
