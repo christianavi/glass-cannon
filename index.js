@@ -2,12 +2,12 @@ const RPC = require('discord-rpc');
 const chalk = require('chalk');
 const fs = require('fs')
 const prompt = require('prompt-sync')();
-const manifest = require(`./package.json`);
+const package = require(`./package.json`);
 
 let showtip = false
 function header() {
     console.clear()
-    console.log(chalk.bold(`${manifest.name} by ${manifest.author}\n`))
+    console.log(chalk.bold(`${package.name} by ${package.author}\n`))
     if (showtip == true){
             console.log(chalk.red('*') + ' - Required. Cannot be blank.\n' + chalk.green('*') + ' - Not required. Can be left blank. Press Enter to skip.\n')
         }
@@ -23,7 +23,7 @@ function init() {
     if (options.largeimage !== '') {
         assets.large_image = options.largeimage
         if (options.largeImagetext == ''){
-            assets.large_text = `${manifest.name} by ${manifest.author}`
+            assets.large_text = `${package.name} by ${package.author}`
         }
         else {
             assets.large_text = options.largeImagetext
@@ -32,7 +32,7 @@ function init() {
     if (options.smallimage !== '') {
         assets.small_image = options.smallimage
         if (options.smallImagetext == ''){
-            assets.small_text = `By Christian Avi Bulan`
+            assets.small_text = `${package.repository.url}`
         }
         else {
             assets.small_text = options.smallImagetext
@@ -56,7 +56,9 @@ function init() {
         })
 
         console.clear()
-        console.log(chalk.bold('cookies-and-cream by Christian Avi Bulan\n') + chalk.green('Your rich presence has started.'))
+        showtip = false
+        header()
+        console.log(chalk.green('Your rich presence has started.'))
     })
 
     client.login({ clientId: options.clientid })
@@ -104,7 +106,7 @@ function create() {
 
     showtip = false
     header()
-    console.log(chalk.bold('cookies-and-cream by Christian Avi Bulan\n\n') + 'Rich Presence Summary')
+    console.log('Rich Presence Summary')
 
     console.log(`Client ID:         ${clientId}\nLarge Image Asset: ${largeImage}\nLarge Image Text:  ${largeImagetext}\nSmall Image Asset: ${smallImage}\nSmall Image Text:  ${smallImagetext}\nDetails:           ${description}\nState:             ${state}`)
 
@@ -144,7 +146,7 @@ function create() {
         if (options.largeimage !== '') {
             assets.large_image = options.largeimage
             if (options.largeImagetext == ''){
-                assets.large_text = "Cookies and Cream by Christian Avi Bulan"
+                assets.large_text = `${package.name} by ${package.author}`
             }
             else {
                 assets.large_text = options.largeImagetext
@@ -153,7 +155,7 @@ function create() {
         if (options.smallimage !== '') {
             assets.small_image = options.smallimage
             if (options.smallImagetext == '') {
-                assets.small_text = 'https://github.com/christianavi'
+                assets.small_text = `${package.repository.url}`
             }
             else {
                 assets.small_text = options.smallImagetext
