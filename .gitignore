@@ -1,6 +1,10 @@
 # Project specific files
 rpc.json
 profiles/
+glass-cannon-linux
+glass-cannon-macos
+glass-cannon-win.exe
+
 
 # Visual Studio Code
 .vscode/
