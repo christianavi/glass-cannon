@@ -1,9 +1,25 @@
-const fs = require('fs')
+const fs = require('fs');
+const os = require('os');
 const chalk = require('chalk');
 const prompt = require('prompt-sync')();
 const { Client } = require('discord-rpc');
 const package = require(`./package.json`);
-const { start } = require('repl');
+const dir = `${os.homedir}/${process.platform === 'win32' ? '/AppData/Roaming' : '/.config'}`
+
+try {
+    if(fs.existsSync(`${dir}/${package.name}`)) {
+    } else {
+        fs.mkdir(`${dir}/${package.name}`, (err) => {
+            if (err) {
+                throw err;
+            }
+        })
+    }
+} catch (err) {
+    console.error(err);
+}
+
+const saveDir = `${dir}/${package.name}`
 
 let showtip = false
 
@@ -261,7 +277,7 @@ function create() {
 
     const data = JSON.stringify(content, null, 2)
 
-    fs.writeFile('./rpc.json', data, (err) => {
+    fs.writeFile(`${saveDir}/rpc.json`, data, (err) => {
         if (err) { throw err }
     })
 
@@ -304,8 +320,8 @@ function summary(options) {
 }
 
 try {
-    if(fs.existsSync('./rpc.json')) {
-        const options = require(`./rpc.json`)
+    if(fs.existsSync(`${saveDir}/rpc.json`)) {
+        const options = require(`${saveDir}/rpc.json`)
         // console.log(options)
         let response = ''
         showtip = false
@@ -317,7 +333,7 @@ try {
             create()
         }
         else {
-            const options = require('./rpc.json');
+            const options = require(`${saveDir}/rpc.json`)
             init(options)
         }
     } else {
