@@ -9,10 +9,6 @@ Get a custom rich presence on Discord. Change details, state, images, timestamp,
 ![small](./assets/img/rich-presence.png)
 </details>
 
-## Before using
-It is important that you have created your own application on [Discord Developer Portal](https://discord.com/developers/applications).
-> [Learn how to create a Discord application.](https://github.com/christianavi/glass-cannon/wiki/Creating-a-Discord-Application)
-
 ## Running Glass Cannon
 
 ### Requirements

@@ -31,7 +31,7 @@ function init(options) {
     if (options.largeImageKey !== '') {
         activity.largeImageKey = options.largeImageKey
         if (options.largeImageText !== ''){
-            activity.largeImageText = options.largeImageText    
+            activity.largeImageText = options.largeImageText
         }
         else {
             activity.largeImageText = `${package.name} by ${package.author}`
