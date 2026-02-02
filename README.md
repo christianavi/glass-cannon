@@ -1,7 +1,7 @@
 # Glass Cannon
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/christianavi/glass-cannon?color=green&logo=github) ![GitHub](https://img.shields.io/github/license/christianavi/glass-cannon) ![Discord](https://img.shields.io/discord/660452758775922701?color=%237289DA&label=Discord&logo=discord&logoColor=white)
 
-Get a custom rich presence on Discord. Change details, state, images, timestamp, and now with **buttons**!
+Get a custom rich presence on Discord. Change details, state, images, timestamp, and add buttons.
 <details>
     <summary markdown="span">Click to view image previews</summary>
 
@@ -41,9 +41,9 @@ After entering the required details, you will be asked if you want to start the 
 ### Subsequent starts
 The next time you run Glass Cannon, you will not be asked to enter all those details again. Glass Cannon actually saves your previous rich presence details. Instead, you will be asked if you want to use the previous settings or not.
 ## FAQs
-### Why is the presence did not updating or showing up? Why is it "not working?"
-Two things you can do is to
-1. Make sure that you are online and not invisible, and the
+### Why is the presence not updating or showing up? Why is it "not working"?
+Two things you can do are
+1. Make sure that you are online and not invisible, and
 2. Turn on the **Display currently running game as a status message** option found on Settings > Game Activity.
 
 ### Why are images not appearing?
